@@ -211,7 +211,11 @@ const getFacultyProfile = async (req, res) => {
 
 const getAllFaculty = async (req, res) => {
               try {
-                            const faculty = await Faculty.find({})
+                            const faculty = await Faculty.find({}).populate({
+                                                        path: "classes.subject",
+                                                        model: "Subject",
+
+                                          });
                             res.json({
                                           success: true,
                                           message: "AllFaculties are here",
