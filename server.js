@@ -2,6 +2,7 @@ const express = require("express");
 const userRouter = require("./routes/User")
 const subjectRouter = require("./routes/Subject")
 const facultyRouter = require("./routes/Faculty")
+const timetableRouter = require("./routes/Timetable")
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -20,6 +21,8 @@ app.use(express.json());
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/subject", subjectRouter)
 app.use("/api/v1/faculty", facultyRouter)
+app.use("/api/v1/timetable", timetableRouter)
 app.listen(PORT, () => {
               console.log(`Server is running on port ${PORT}`);
 });
+
